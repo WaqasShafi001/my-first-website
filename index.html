@@ -15,7 +15,39 @@
             <div class="terminal-line"><span class="command-prompt">wiqo@terminal:~$</span> flutter create mindset</div>
             <div class="terminal-line"><span class="command-success">Remember: Scaffold + TextFormField + ElevatedButton = Magic ✨</span></div>
             <div class="terminal-line"><span class="command-prompt">wiqo@terminal:~$</span> echo $WIQOLOGY_PHILOSOPHY</div>
-            <div class="terminal-line"><span class="command-success">Build fast. Ship faster. Learn fastest.</span></div<!DOCTYPE html>
+            <div class="terminal-line"><span class="command-success">Build fast. Ship faster. Learn fastest.</span></div>
+            <div class="terminal-line"><span class="command-prompt">wiqo@terminal:~$</span> ./wisdom.exe</div>
+            <div class="terminal-line"><span class="command-warning">"The best code is code that ships." - Wiqology Principle #1 <span class="cursor-blink">|</span></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Movement Section -->
+<section class="movement-section" id="movement">
+    <div class="movement-content">
+        <h2 class="movement-title">Join the Movement</h2>
+        <p class="movement-subtitle">Be part of a community that refuses to accept "good enough"</p>
+        <div class="movement-stats">
+            <div class="movement-stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Builders</span>
+            </div>
+            <div class="movement-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Countries</span>
+            </div>
+            <div class="movement-stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Ideas Built</span>
+            </div>
+        </div>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Enter your email to join the science" class="email-input">
+            <button class="signup-button">Join Wiqology</button>
+        </div>
+        <p class="movement-promise">Get exclusive insights, early access to content, and be the first to know about new Wiqology initiatives.</p>
+    </div>
+</section><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -618,6 +650,141 @@
     .terminal-line:nth-child(3) { animation-delay: 2.6s; }
     .terminal-line:nth-child(4) { animation-delay: 3.4s; }
     .terminal-line:nth-child(5) { animation-delay: 4.2s; }
+    .terminal-line:nth-child(6) { animation-delay: 5s; }
+    .terminal-line:nth-child(7) { animation-delay: 5.8s; }
+    .terminal-line:nth-child(8) { animation-delay: 6.6s; }
+
+    /* Join Movement Section */
+    .movement-section {
+        padding: 100px 50px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(0, 0, 0, 0.5));
+        position: relative;
+        overflow: hidden;
+    }
+
+    .movement-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%2339FF14" opacity="0.1"><animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/></circle></svg>') repeat;
+        animation: float 20s infinite linear;
+    }
+
+    .movement-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .movement-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #39FF14, #fff, #39FF14);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .movement-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .movement-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+
+    .movement-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movement-stat .stat-number {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #39FF14;
+        margin-bottom: 8px;
+    }
+
+    .movement-stat .stat-label {
+        font-size: 1rem;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .newsletter-signup {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .email-input {
+        flex: 1;
+        min-width: 250px;
+        padding: 15px 20px;
+        border: 2px solid rgba(57, 255, 20, 0.3);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 16px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .email-input:focus {
+        outline: none;
+        border-color: #39FF14;
+        box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    }
+
+    .email-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .signup-button {
+        padding: 15px 30px;
+        background: linear-gradient(45deg, #39FF14, #39FF14);
+        color: #0D1117;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .signup-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(57, 255, 20, 0.4);
+    }
+
+    .movement-promise {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
 
     @keyframes typewriter {
         to { opacity: 1; }
@@ -661,7 +828,28 @@
 
         .skills-section {
             padding: 50px 20px;
+        }
+
+        .skills-grid {
             grid-template-columns: 1fr;
+        }
+
+        .movement-section {
+            padding: 50px 20px;
+        }
+
+        .movement-stats {
+            gap: 30px;
+        }
+
+        .newsletter-signup {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .email-input {
+            min-width: 100%;
+            margin-bottom: 15px;
         }
 
         .terminal {
@@ -753,6 +941,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#philosophy">Philosophy</a></li>
             <li><a href="#connect">Connect</a></li>
+            <li><a href="#movement">Join</a></li>
         </ul>
     </nav>
 </header>
@@ -1075,7 +1264,7 @@
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.skill-card, .social-card, .stat-item').forEach(element => {
+    document.querySelectorAll('.skill-card, .social-card, .stat-item, .movement-stat').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(50px)';
         element.style.transition = 'all 0.6s ease';
