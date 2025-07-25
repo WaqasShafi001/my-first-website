@@ -3,74 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Portfolio</title>
+    <title>Wiqology's Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            text-align: center;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0D1117 0%, #1a2332 100%);
+            color: #fff;
+            overflow-x: hidden;
         }
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://source.unsplash.com/random/1920x1080/?coding') no-repeat center/cover;
+            background-attachment: fixed;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #39FF14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        h1 span {
+            color: #fff;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
-        .bio {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+        .bio, .contact {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .contact {
+            animation-delay: 0.4s;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #39FF14;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
         a {
-            color: #007bff;
+            color: #39FF14;
             text-decoration: none;
+            transition: color 0.3s;
         }
         a:hover {
+            color: #fff;
             text-decoration: underline;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #39FF14;
+            color: #0D1117;
+            font-weight: bold;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+            text-decoration: none;
+        }
+        footer {
+            background: #0D1117;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(57, 255, 20, 0.8); }
+            to { text-shadow: 0 0 20px rgba(57, 255, 20, 1); }
+        }
+        @keyframes slideUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <div class="hero-content">
+            <h1>Wiqology's <span>Portfolio</span></h1>
+            <p style="font-size: 1.5rem; margin: 1rem 0;">Crafting Code with Passion</p>
+            <a href="#bio" class="cta-button">Explore My Work</a>
+        </div>
     </header>
     <div class="container">
-        <div class="bio">
+        <div class="bio" id="bio">
             <h2>About Me</h2>
-            <p>Hi! I'm Waqas, a beginner exploring web development. This is my first static website, built with HTML and CSS. I'm excited to share my journey! and this is awesome</p>
+            <p>Hey, I'm Waqas, aka Wiqology! I'm diving into the world of web and mobile app development, with a passion for Flutter and speed coding. This site is my playground to showcase my journey, from static HTML to dynamic apps. Stick around for more!</p>
         </div>
-        <div class="bio">
-            <h2>Contact</h2>
-            <p>Email me at: <a href="mailto:waqasshafi001@gmail.com">wiqology@gmail.com</a></p>
-            <p>Follow my progress on <a href="https://x.com/wiqology" target="_blank">X</a></p>
+        <div class="contact">
+            <h2>Get in Touch</h2>
+            <p>Email: <a href="mailto:wiqology@gmail.com">wiqology@gmail.com</a></p>
+            <p>Follow me on <a href="https://x.com/wiqology" target="_blank">X</a> for coding updates!</p>
+            <a href="https://github.com/WaqasShafi001" target="_blank" class="cta-button">View My GitHub</a>
         </div>
     </div>
     <footer>
-        <p>&copy; 2025 Wiqology. All rights reserved.</p>
+        <p>© 2025 Wiqology. Built with Code & Creativity.</p>
     </footer>
     <script>
-        console.log("Welcome to my website!");
+        console.log("Welcome to Wiqology's Portfolio!");
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.backgroundPositionY = `${window.scrollY * 0.5}px`;
+        });
     </script>
 </body>
 </html>
