@@ -436,39 +436,418 @@
         line-height: 1.6;
     }
 
-    /* Stats Section */
+    /* Philosophy Stats Section 1 */
     .stats-section {
         padding: 80px 50px;
         text-align: center;
         background: rgba(0, 212, 255, 0.05);
         backdrop-filter: blur(10px);
+        position: relative;
+    }
+
+    .stats-section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: linear-gradient(45deg, #39FF14, #00d4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .stats-section-subtitle {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        margin-bottom: 50px;
+        font-style: italic;
     }
 
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 40px;
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
-    .stat-item {
-        padding: 20px;
+    .philosophy-stat {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 30px 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(57, 255, 20, 0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .philosophy-stat::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(45deg, #39FF14, #00d4ff);
+    }
+
+    .philosophy-stat:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(57, 255, 20, 0.2);
+        border-color: rgba(57, 255, 20, 0.4);
     }
 
     .stat-number {
-        font-size: 3rem;
+        font-size: 2.2rem;
         font-weight: 900;
-        color: #00d4ff;
+        color: #39FF14;
         display: block;
         margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
     .stat-label {
         font-size: 1.1rem;
-        opacity: 0.8;
+        opacity: 0.9;
         text-transform: uppercase;
         letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .stat-explanation {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        line-height: 1.4;
+        font-style: italic;
+        color: #00d4ff;
+    }
+
+    /* Simple Philosophy Stats Section 2 */
+    .simple-stats-section {
+        padding: 60px 50px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(57, 255, 20, 0.08), rgba(0, 0, 0, 0.3));
+        position: relative;
+    }
+
+    .simple-stats-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto 30px;
+        flex-wrap: wrap;
+    }
+
+    .simple-stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        min-width: 150px;
+        transition: all 0.3s ease;
+    }
+
+    .simple-stat-item:hover {
+        transform: scale(1.1);
+    }
+
+    .simple-stat-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
+    }
+
+    .simple-stat-text {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #39FF14;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .simple-stat-divider {
+        font-size: 2rem;
+        color: #39FF14;
+        opacity: 0.6;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .simple-stats-tagline {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        font-style: italic;
+        color: #00d4ff;
+        text-align: center;
+    }
+
+    /* Projects Showcase Section */
+    .projects-section {
+        padding: 100px 50px;
+        background: rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .projects-carousel-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .projects-carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .project-card {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(57, 255, 20, 0.2);
+        border-radius: 20px;
+        padding: 50px;
+        transition: all 0.5s ease;
+    }
+
+    .project-card.active {
+        display: grid;
+        animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .project-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-mockup {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 3px solid #333;
+    }
+
+    .mockup-screen {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, #0D1117, #1a2332);
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mockup-header {
+        height: 60px;
+        background: rgba(57, 255, 20, 0.1);
+        border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+        position: relative;
+    }
+
+    .mockup-header::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 20px;
+        background: rgba(57, 255, 20, 0.3);
+        border-radius: 10px;
+    }
+
+    .mockup-content {
+        padding: 20px;
+        height: calc(100% - 60px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mockup-chart, .mockup-stats, .mockup-list, .mockup-camera, .mockup-gallery, .mockup-map {
+        background: rgba(57, 255, 20, 0.15);
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mockup-chart {
+        height: 150px;
+        background: linear-gradient(45deg, rgba(57, 255, 20, 0.2), rgba(0, 212, 255, 0.2));
+    }
+
+    .mockup-stats {
+        height: 80px;
+        background: linear-gradient(90deg, rgba(57, 255, 20, 0.1), rgba(57, 255, 20, 0.3));
+    }
+
+    .mockup-list {
+        height: 200px;
+        background: repeating-linear-gradient(
+            90deg,
+            rgba(57, 255, 20, 0.1),
+            rgba(57, 255, 20, 0.1) 20px,
+            rgba(57, 255, 20, 0.2) 20px,
+            rgba(57, 255, 20, 0.2) 40px
+        );
+    }
+
+    .mockup-fab {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #39FF14;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(57, 255, 20, 0.4);
+    }
+
+    .mockup-camera {
+        height: 180px;
+        background: radial-gradient(circle, rgba(57, 255, 20, 0.3), rgba(57, 255, 20, 0.1));
+    }
+
+    .mockup-gallery {
+        height: 120px;
+        background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(57, 255, 20, 0.2));
+    }
+
+    .mockup-map {
+        height: 200px;
+        background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(0, 212, 255, 0.1));
+    }
+
+    .mockup-pins {
+        height: 100px;
+        background: repeating-radial-gradient(
+            circle,
+            rgba(57, 255, 20, 0.4) 5px,
+            transparent 5px,
+            transparent 25px
+        );
+    }
+
+    .project-info h3 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #39FF14, #00d4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+    }
+
+    .project-info p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
+
+    .project-meta {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .build-time {
+        background: rgba(57, 255, 20, 0.2);
+        color: #39FF14;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .tech-stack {
+        background: rgba(0, 212, 255, 0.2);
+        color: #00d4ff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .project-quote {
+        font-style: italic;
+        font-size: 1rem;
+        opacity: 0.8;
+        border-left: 3px solid #39FF14;
+        padding-left: 20px;
+        color: #00d4ff;
+    }
+
+    /* Carousel Controls */
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #39FF14;
+        background: rgba(57, 255, 20, 0.1);
+        color: #39FF14;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-btn:hover {
+        background: #39FF14;
+        color: #0D1117;
+        transform: scale(1.1);
+    }
+
+    .carousel-indicators {
+        display: flex;
+        gap: 10px;
+    }
+
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(57, 255, 20, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+        background: #39FF14;
+        transform: scale(1.3);
     }
 
     /* Skills Section */
@@ -820,6 +1199,62 @@
         .stats-section {
             padding: 50px 20px;
         }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .simple-stats-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .simple-stat-divider {
+            transform: rotate(90deg);
+            font-size: 1.5rem;
+        }
+
+        .simple-stats-section {
+            padding: 40px 20px;
+        }
+
+        .projects-section {
+            padding: 50px 20px;
+        }
+
+        .project-card {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .project-mockup {
+            width: 200px;
+            height: 360px;
+            margin: 0 auto;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+        }
+
+        .project-meta {
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .carousel-controls {
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 1.3rem;
+        }
     }
 
     /* Loading Animation */
@@ -939,24 +1374,167 @@
     </div>
 </section>
 
-<!-- Stats Section -->
+<!-- Philosophy Stats Section 1 -->
 <section class="stats-section">
+    <div class="section-header">
+        <h2 class="stats-section-title">The Wiqology Way</h2>
+        <p class="stats-section-subtitle">Philosophy over perfection, progress over procrastination</p>
+    </div>
     <div class="stats-grid">
-        <div class="stat-item">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Years Flutter</span>
+        <div class="stat-item philosophy-stat">
+            <span class="stat-number">Countless</span>
+            <span class="stat-label">Tutorials Skipped</span>
+            <div class="stat-explanation">Why watch when you can build?</div>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">∞</span>
-            <span class="stat-label">Lines of Code</span>
+        <div class="stat-item philosophy-stat">
+            <span class="stat-number">What Matters</span>
+            <span class="stat-label">Deadlines Met</span>
+            <div class="stat-explanation">Quality that ships beats perfection that doesn't</div>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">💡</span>
-            <span class="stat-label">Ideas Built</span>
+        <div class="stat-item philosophy-stat">
+            <span class="stat-number">Overrated</span>
+            <span class="stat-label">Perfect Code</span>
+            <div class="stat-explanation">Good enough code that works > Perfect code that's late</div>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">🚀</span>
-            <span class="stat-label">Speed Coding</span>
+        <div class="stat-item philosophy-stat">
+            <span class="stat-number">Everything</span>
+            <span class="stat-label">Shipped Projects</span>
+            <div class="stat-explanation">Build it. Ship it. Learn from it. Repeat.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Simple Philosophy Stats Section 2 -->
+<section class="simple-stats-section">
+    <div class="simple-stats-container">
+        <div class="simple-stat-item">
+            <div class="simple-stat-icon">⚡</div>
+            <div class="simple-stat-text">Build Fast</div>
+        </div>
+        <div class="simple-stat-divider">→</div>
+        <div class="simple-stat-item">
+            <div class="simple-stat-icon">🚀</div>
+            <div class="simple-stat-text">Ship Faster</div>
+        </div>
+        <div class="simple-stat-divider">→</div>
+        <div class="simple-stat-item">
+            <div class="simple-stat-icon">🧠</div>
+            <div class="simple-stat-text">Learn Fastest</div>
+        </div>
+        <div class="simple-stat-divider">→</div>
+        <div class="simple-stat-item">
+            <div class="simple-stat-icon">🔄</div>
+            <div class="simple-stat-text">Repeat Daily</div>
+        </div>
+    </div>
+    <div class="simple-stats-tagline">The infinite loop of building better</div>
+</section>
+
+<!-- Project Showcase Carousel -->
+<section class="projects-section">
+    <div class="section-header">
+        <h2 class="section-title">Built with Wiqology</h2>
+        <p class="section-subtitle">Real projects. Real speed. Real impact.</p>
+    </div>
+    <div class="projects-carousel-container">
+        <div class="projects-carousel" id="projectsCarousel">
+            <div class="project-card active">
+                <div class="project-image">
+                    <div class="project-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header"></div>
+                            <div class="mockup-content">
+                                <div class="mockup-chart"></div>
+                                <div class="mockup-stats"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>MindFlow - Mental Health Tracker</h3>
+                    <p>A beautiful, intuitive app helping users track their mental wellness journey with mood analytics and meditation reminders.</p>
+                    <div class="project-meta">
+                        <span class="build-time">⚡ Built in 72 hours</span>
+                        <span class="tech-stack">Flutter • Firebase • Charts</span>
+                    </div>
+                    <div class="project-quote">"Tutorial hell? Never heard of it. Just started building." - Sarah K.</div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header"></div>
+                            <div class="mockup-content">
+                                <div class="mockup-list"></div>
+                                <div class="mockup-fab"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>TaskBlitz - Productivity Beast</h3>
+                    <p>A lightning-fast task manager that actually gets used. No bloat, no fluff - just pure productivity magic.</p>
+                    <div class="project-meta">
+                        <span class="build-time">⚡ Built in 48 hours</span>
+                        <span class="tech-stack">Flutter • SQLite • Push Notifications</span>
+                    </div>
+                    <div class="project-quote">"Stopped overthinking. Started shipping. Best decision ever." - Mike R.</div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header"></div>
+                            <div class="mockup-content">
+                                <div class="mockup-camera"></div>
+                                <div class="mockup-gallery"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>SnapLearn - AI Study Buddy</h3>
+                    <p>Point your camera at any text and get instant summaries, flashcards, and quizzes. Learning made effortless.</p>
+                    <div class="project-meta">
+                        <span class="build-time">⚡ Built in 96 hours</span>
+                        <span class="tech-stack">Flutter • ML Kit • Camera API</span>
+                    </div>
+                    <div class="project-quote">"From idea to app store in a weekend. Wiqology changed everything." - Alex M.</div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header"></div>
+                            <div class="mockup-content">
+                                <div class="mockup-map"></div>
+                                <div class="mockup-pins"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>LocalGems - Hidden Spots Finder</h3>
+                    <p>Discover amazing local places that only locals know about. Community-driven exploration at its finest.</p>
+                    <div class="project-meta">
+                        <span class="build-time">⚡ Built in 60 hours</span>
+                        <span class="tech-stack">Flutter • Google Maps • Geolocation</span>
+                    </div>
+                    <div class="project-quote">"The best code is code that ships. And ship we did!" - Emma L.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" id="prevBtn">‹</button>
+            <div class="carousel-indicators" id="indicators"></div>
+            <button class="carousel-btn next" id="nextBtn">›</button>
         </div>
     </div>
 </section>
@@ -1397,16 +1975,73 @@
         }
     });
 
-    // Add CSS animation for bounce effect
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, -50%) translateY(0); }
-            40% { transform: translate(-50%, -50%) translateY(-30px); }
-            60% { transform: translate(-50%, -50%) translateY(-15px); }
-        }
-    `;
-    document.head.appendChild(style);
+    // Projects Carousel Functionality
+    let currentProject = 0;
+    const projects = document.querySelectorAll('.project-card');
+    const totalProjects = projects.length;
+
+    // Create indicators
+    const indicatorsContainer = document.getElementById('indicators');
+    for (let i = 0; i < totalProjects; i++) {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (i === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToProject(i));
+        indicatorsContainer.appendChild(indicator);
+    }
+
+    function showProject(index) {
+        // Hide all projects
+        projects.forEach(project => project.classList.remove('active'));
+        
+        // Show current project
+        projects[index].classList.add('active');
+        
+        // Update indicators
+        document.querySelectorAll('.indicator').forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextProject() {
+        currentProject = (currentProject + 1) % totalProjects;
+        showProject(currentProject);
+    }
+
+    function prevProject() {
+        currentProject = (currentProject - 1 + totalProjects) % totalProjects;
+        showProject(currentProject);
+    }
+
+    function goToProject(index) {
+        currentProject = index;
+        showProject(currentProject);
+    }
+
+    // Event listeners for carousel controls
+    document.getElementById('nextBtn').addEventListener('click', nextProject);
+    document.getElementById('prevBtn').addEventListener('click', prevProject);
+
+    // Auto-advance carousel every 8 seconds
+    setInterval(nextProject, 8000);
+
+    // Pause auto-advance on hover
+    const carouselContainer = document.querySelector('.projects-carousel-container');
+    let autoAdvanceInterval;
+
+    function startAutoAdvance() {
+        autoAdvanceInterval = setInterval(nextProject, 8000);
+    }
+
+    function stopAutoAdvance() {
+        clearInterval(autoAdvanceInterval);
+    }
+
+    carouselContainer.addEventListener('mouseenter', stopAutoAdvance);
+    carouselContainer.addEventListener('mouseleave', startAutoAdvance);
+
+    // Start auto-advance initially
+    startAutoAdvance();
 
 </script>
 </body>
