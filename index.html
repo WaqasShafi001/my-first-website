@@ -56,7 +56,7 @@
             margin: 2rem auto;
             padding: 0 1rem;
         }
-        .bio, .contact {
+        .bio, .skills, .projects, .contact {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 2rem;
@@ -65,19 +65,47 @@
             transform: translateY(50px);
             opacity: 0;
             animation: slideUp 0.8s ease forwards;
-            animation-delay: 0.2s;
         }
-        .contact {
-            animation-delay: 0.4s;
-        }
+        .bio { animation-delay: 0.2s; }
+        .skills { animation-delay: 0.4s; }
+        .projects { animation-delay: 0.6s; }
+        .contact { animation-delay: 0.8s; }
         h2 {
             font-size: 2rem;
             color: #39FF14;
             margin-bottom: 1rem;
         }
-        p {
+        p, li {
             font-size: 1.2rem;
             line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        li {
+            background: #39FF14;
+            color: #0D1117;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        li:hover {
+            transform: scale(1.1);
+        }
+        .project-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
         }
         a {
             color: #39FF14;
@@ -123,7 +151,8 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 1.5rem; }
-            p { font-size: 1rem; }
+            p, li { font-size: 1rem; }
+            ul { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -140,7 +169,33 @@
             <h2>About Me</h2>
             <p>Hey, I'm Waqas, aka Wiqology! I'm diving into the world of web and mobile app development, with a passion for Flutter and speed coding. This site is my playground to showcase my journey, from static HTML to dynamic apps. Stick around for more!</p>
         </div>
-        <div class="contact">
+        <div class="skills" id="skills">
+            <h2>My Skills</h2>
+            <p>Here’s what I’m learning and building with:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Flutter</li>
+                <li>Git</li>
+                <li>Python</li>
+            </ul>
+        </div>
+        <div class="projects" id="projects">
+            <h2>My Projects</h2>
+            <p>Check out some of my early projects (more to come as I grow!):</p>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>My first static website, built with HTML and CSS, showcasing my coding journey. You're looking at it right now!</p>
+                <a href="#" class="cta-button">View Live</a>
+            </div>
+            <div class="project-card">
+                <h3>Flutter App (Coming Soon)</h3>
+                <p>Working on a mobile app using Flutter to bring my ideas to life. Stay tuned for updates!</p>
+                <a href="https://x.com/wiqology" target="_blank" class="cta-button">Follow Progress on X</a>
+            </div>
+        </div>
+        <div class="contact" id="contact">
             <h2>Get in Touch</h2>
             <p>Email: <a href="mailto:wiqology@gmail.com">wiqology@gmail.com</a></p>
             <p>Follow me on <a href="https://x.com/wiqology" target="_blank">X</a> for coding updates!</p>
